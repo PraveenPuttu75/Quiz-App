@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technology Quiz - Advanced</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../quizes.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">QUIZ MINDES</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../menu.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="quiz-container">
+      <h2>Quiz - Technology (Advanced)</h2>
+      <div class="score-box">
+        <h5>Score</h5>
+        <div class="circular-score">
+          <svg width="100" height="100">
+            <circle class="bg" cx="50" cy="50" r="45"></circle>
+            <circle
+              class="progress"
+              cx="50"
+              cy="50"
+              r="45"
+              stroke-dasharray="283"
+              stroke-dashoffset="283"
+            ></circle>
+          </svg>
+          <div
+            id="scoreText"
+            style="position: absolute; top: 35%; left: 35%; font-size: 1rem"
+          >
+            0 / 0
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="Timer"
+        id="timer"
+        style="font-size: 1.5rem; text-align: center"
+      >
+        Time Left: <span id="timeRemaining">05:00</span>s
+      </div>
+
+      <div class="quiz-box">
+        <div id="quiz" style="display: none">
+          <div class="question" id="questionText">
+            Question will appear here
+          </div>
+          <ul class="options" id="optionsList"></ul>
+          <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="btn">
+          <button id="quizButton" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      const questions = [
+        {
+          question: "What is the main purpose of the blockchain technology?",
+          options: [
+            "Data storage",
+            "Cryptocurrency transactions",
+            "Decentralized information management",
+            "All of the above",
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            "Which programming language is primarily used for machine learning?",
+          options: ["Java", "C#", "Python", "Ruby"],
+          answer: 2,
+        },
+        {
+          question: "What is the term for a network of interconnected devices?",
+          options: [
+            "Internet of Things (IoT)",
+            "Virtual Network",
+            "Cloud Computing",
+            "Distributed Network",
+          ],
+          answer: 0,
+        },
+        {
+          question: "What does 'SSH' stand for in networking?",
+          options: [
+            "Secure Socket Hub",
+            "Secure Shell",
+            "System Shell",
+            "Simple Secure Host",
+          ],
+          answer: 1,
+        },
+        {
+          question: "Which of the following is an example of a NoSQL database?",
+          options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+          answer: 2,
+        },
+        {
+          question: "What is a common use of smart contracts?",
+          options: [
+            "Digital signatures",
+            "Financial transactions",
+            "Automated processes",
+            "All of the above",
+          ],
+          answer: 3,
+        },
+        {
+          question: "What does 'DDoS' stand for?",
+          options: [
+            "Distributed Denial of Service",
+            "Direct Denial of Service",
+            "Distributed Data of Service",
+            "Dynamic Denial of Service",
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            "Which technology is used to create virtual reality experiences?",
+          options: [
+            "Augmented Reality",
+            "3D Modeling",
+            "Artificial Intelligence",
+            "Blockchain",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What is the primary function of a compiler?",
+          options: [
+            "Translate code into machine language",
+            "Execute code",
+            "Debug code",
+            "Store code",
+          ],
+          answer: 0,
+        },
+        {
+          question: "What is the main goal of Agile development?",
+          options: [
+            "Increase productivity",
+            "Improve customer satisfaction",
+            "Reduce costs",
+            "All of the above",
+          ],
+          answer: 3,
+        },
+      ];
+    </script>
+    <script src="../../levelselect.js"></script>
+  </body>
+</html>

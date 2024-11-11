@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Quiz - Advanced</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../quizes.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">QUIZ MINDES</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../menu.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="quiz-container">
+      <h2>Quiz - Python (Advanced)</h2>
+      <div class="score-box">
+        <h5>Score</h5>
+        <div class="circular-score">
+          <svg width="100" height="100">
+            <circle class="bg" cx="50" cy="50" r="45"></circle>
+            <circle
+              class="progress"
+              cx="50"
+              cy="50"
+              r="45"
+              stroke-dasharray="283"
+              stroke-dashoffset="283"
+            ></circle>
+          </svg>
+          <div
+            id="scoreText"
+            style="position: absolute; top: 35%; left: 35%; font-size: 1rem"
+          >
+            0 / 0
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="Timer"
+        id="timer"
+        style="font-size: 1.5rem; text-align: center"
+      >
+        Time Left: <span id="timeRemaining">05:00</span>s
+      </div>
+
+      <div class="quiz-box">
+        <div id="quiz" style="display: none">
+          <div class="question" id="questionText">
+            Question will appear here
+          </div>
+          <ul class="options" id="optionsList"></ul>
+          <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="btn">
+          <button id="quizButton" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      const questions = [
+        {
+          question:
+            "What will be the output of the following code: print(bool(''))?",
+          options: ["True", "False", "None", "Error"],
+          answer: 1,
+        },
+        {
+          question:
+            "Which of the following statements creates a shallow copy of a list?",
+          options: [
+            "list.copy()",
+            "list[:]",
+            "copy.deepcopy(list)",
+            "list.clone()",
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            "What is the purpose of the 'finally' block in a try-except statement?",
+          options: [
+            "To execute code after try and except blocks",
+            "To catch exceptions",
+            "To define a cleanup action",
+            "Both 1 and 3",
+          ],
+          answer: 3,
+        },
+        {
+          question:
+            "What is the output of the following code: print((lambda x: x**2)(3))?",
+          options: ["6", "9", "3", "Error"],
+          answer: 1,
+        },
+        {
+          question:
+            "Which of the following is not a valid way to format strings in Python?",
+          options: [
+            "f'String {var}'",
+            "'String {}'.format(var)",
+            "'String % var'",
+            "'String {0}'",
+          ],
+          answer: 2,
+        },
+        {
+          question: "What does the 'setdefault' method do in a dictionary?",
+          options: [
+            "Returns the value of a key",
+            "Sets a key to a default value if it doesn't exist",
+            "Removes a key from the dictionary",
+            "None of the above",
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            "Which method would you use to combine multiple iterables into a single iterable in Python?",
+          options: ["zip()", "merge()", "join()", "combine()"],
+          answer: 0,
+        },
+        {
+          question: "What is the purpose of the 'enumerate()' function?",
+          options: [
+            "To count items in a list",
+            "To iterate over a list with index",
+            "To sort a list",
+            "To filter a list",
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            "What will be the result of the expression: {x: x**2 for x in (2, 3, 4)}?",
+          options: [
+            "{2: 4, 3: 9, 4: 16}",
+            "{2: 2, 3: 3, 4: 4}",
+            "Error",
+            "{0: 0, 1: 1, 2: 2}",
+          ],
+          answer: 0,
+        },
+        {
+          question:
+            "Which of the following statements will create a numpy array?",
+          options: [
+            "np.array([1, 2, 3])",
+            "array([1, 2, 3])",
+            "np.createArray([1, 2, 3])",
+            "numpy([1, 2, 3])",
+          ],
+          answer: 0,
+        },
+      ];
+    </script>
+    <script src="../../levelselect.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aptitude Quiz - Advanced</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../quizes.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">QUIZ MINDES</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../menu.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="quiz-container">
+      <h2>Quiz - Aptitude (Advanced)</h2>
+      <div class="score-box">
+        <h5>Score</h5>
+        <div class="circular-score">
+          <svg width="100" height="100">
+            <circle class="bg" cx="50" cy="50" r="45"></circle>
+            <circle
+              class="progress"
+              cx="50"
+              cy="50"
+              r="45"
+              stroke-dasharray="283"
+              stroke-dashoffset="283"
+            ></circle>
+          </svg>
+          <div
+            id="scoreText"
+            style="position: absolute; top: 35%; left: 35%; font-size: 1rem"
+          >
+            0 / 0
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="Timer"
+        id="timer"
+        style="font-size: 1.5rem; text-align: center"
+      >
+        Time Left: <span id="timeRemaining">05:00</span>s
+      </div>
+
+      <div class="quiz-box">
+        <div id="quiz" style="display: none">
+          <div class="question" id="questionText">
+            Question will appear here
+          </div>
+          <ul class="options" id="optionsList"></ul>
+          <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="btn">
+          <button id="quizButton" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      const questions = [
+      {
+    question: "In how many different ways can the letters of the word 'MATH' be arranged?",
+    options: ["12", "16", "18", "24"],
+    answer: 3,
+},
+{
+    question: "If the population of a town increases by 10% annually, what will be the population after 2 years if the current population is 10,000?",
+    options: ["11,000", "12,000", "12,100", "12,500"],
+    answer: 2,
+},
+{
+    question: "If 12 men can complete a job in 6 days, how many men are required to complete it in 4 days?",
+    options: ["10", "12", "15", "18"],
+    answer: 2,
+},
+{
+    question: "A sum triples itself in 5 years at compound interest. In how many years will it become nine times itself?",
+    options: ["10 years", "15 years", "12 years", "20 years"],
+    answer: 0,
+},
+{
+    question: "If a car's value depreciates 20% each year, what will be its value after 2 years if it was initially $15,000?",
+    options: ["$9600", "$10,000", "$9600", "$12,000"],
+    answer: 2,
+},
+{
+    question: "The average of five consecutive odd numbers is 25. What is the smallest of these numbers?",
+    options: ["17", "19", "21", "23"],
+    answer: 1,
+},
+{
+    question: "What is the remainder when 1789 is divided by 12?",
+    options: ["5", "7", "9", "11"],
+    answer: 1,
+},
+{
+    question: "A number is as much greater than 45 as it is smaller than 75. What is the number?",
+    options: ["50", "55", "60", "65"],
+    answer: 2,
+},
+{
+    question: "If a person's salary increases by 25% and then decreases by 20%, what is the net percentage change?",
+    options: ["5% increase", "5% decrease", "2% increase", "2% decrease"],
+    answer: 3,
+},
+{
+    question: "In a group of 80 people, 60% are men. If 50% of the men are married, how many unmarried men are there?",
+    options: ["24", "12", "16", "18"],
+    answer: 0,
+},
+
+      ];
+    </script>
+    <script src="../../levelselect.js"></script>
+  </body>
+</html>

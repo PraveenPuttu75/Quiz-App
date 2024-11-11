@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body, html {
+        height: 100%;
+      }
+
+      .loginpage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('./Images/3607424.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .login {
+        background-color: rgba(0, 0, 0, 0.6); 
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        -webkit-text-fill-color: azure;
+      }
+
+      .tbl {
+        font-size: x-large;
+        margin: 20px auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+
+      .butn {
+        height: 5vh;
+        width: 25vw;
+        min-width: 200px;
+        -webkit-text-fill-color: black;
+        margin-top: 3vh;
+        font-family: 'Trebuchet MS', sans-serif;
+        font-size: x-large;
+      }
+
+      .lgo {
+        font-family: 'Trebuchet MS', sans-serif;
+        -webkit-text-fill-color: rgb(243, 228, 17);
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .ibox {
+        -webkit-text-fill-color: black;
+        padding: 10px;
+        font-size: large;
+        width: 100%;
+      }
+
+      .tbl label {
+        margin-right: 10px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loginpage">
+      <div class="login">
+        <form class="login-form" id="signUpForm" onsubmit="handleSignUp(event)">
+          <h1 class="lgo">Sign Up</h1>
+          <table class="tbl">
+            <tr>
+              <td><label for="username">Username:</label></td>
+              <td><input class="ibox" type="text" id="username" name="username" required /></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input class="ibox" type="email" id="email" name="email" required /></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+              <td><input class="ibox" type="password" id="password" name="password" required /></td>
+            </tr>
+            <tr>
+              <td><label for="confirmPassword">Confirm Password:</label></td>
+              <td><input class="ibox" type="password" id="confirmPassword" name="confirmPassword" required /></td>
+            </tr>
+          </table>
+          <button class="butn">SIGN UP</button>
+          <br>
+          <a href="./loginpage.html"><button type="button" class="butn">LOG IN</button></a>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function handleSignUp(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+
+        if (username && email && password && confirmPassword) {
+          alert('Sign Up Successful!');
+          window.location.href = './menu.html';  
+        } else {
+          alert('Please fill in all fields!');
+        }
+      }
+    </script>
+  </body>
+</html>

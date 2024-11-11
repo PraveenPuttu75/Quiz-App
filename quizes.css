@@ -1,0 +1,142 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #271924;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+}
+.navbar-toggler {
+  background-color: #000000;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand{
+  font-family:cursive;
+  font-size:120%;
+  
+  
+
+}
+
+.quiz-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 56px);  
+  padding: 0 20px; 
+  background-color: #e0f7fa;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0; 
+}
+
+.quiz-box,
+.score-box {
+  background-color: #b2ebf2;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 900px;
+  flex-shrink: 0;
+  
+  
+}
+.score-box h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Timer {
+  background-color: #fff;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  flex-shrink: 0;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.btn button{
+  border-radius: 5px;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+.options {
+
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.options li {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+.option-btn {
+  -webkit-text-fill-color: #000000;
+  background-color: rgb(231, 244, 255);
+  width: 100%;
+  height: auto;  
+  white-space: normal; 
+  word-wrap: break-word; 
+  text-align: center; 
+  padding: 10px; 
+}
+
+.circular-score {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.circular-score svg {
+  transform: rotate(-90deg);
+}
+.circular-score circle {
+  fill: none;
+  stroke-width: 10;
+}
+.circular-score .bg {
+  stroke: #e76d6d5a;
+}
+.circular-score .progress {
+  stroke: #185731ac;
+  transition: stroke-dashoffset 0.35s;
+}
+ 
+.option-btn.correct {
+  background-color: rgb(128, 180, 128) !important;
+  color: white;
+}
+.option-btn.incorrect {
+  background-color: red !important;
+  color: white;
+}
+
+
+@media (max-width: 384px) {
+           .quiz-container h2{
+            font-size:150%
+           }
+        }

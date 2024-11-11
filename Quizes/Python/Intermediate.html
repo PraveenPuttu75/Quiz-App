@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Quiz - Intermediate</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../quizes.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">QUIZ MINDES</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../menu.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="quiz-container">
+      <h2>Quiz - Python (Medium)</h2>
+      <div class="score-box">
+        <h5>Score</h5>
+        <div class="circular-score">
+          <svg width="100" height="100">
+            <circle class="bg" cx="50" cy="50" r="45"></circle>
+            <circle
+              class="progress"
+              cx="50"
+              cy="50"
+              r="45"
+              stroke-dasharray="283"
+              stroke-dashoffset="283"
+            ></circle>
+          </svg>
+          <div
+            id="scoreText"
+            style="position: absolute; top: 35%; left: 35%; font-size: 1rem"
+          >
+            0 / 0
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="Timer"
+        id="timer"
+        style="font-size: 1.5rem; text-align: center"
+      >
+        Time Left: <span id="timeRemaining">05:00</span>s
+      </div>
+
+      <div class="quiz-box">
+        <div id="quiz" style="display: none">
+          <div class="question" id="questionText">
+            Question will appear here
+          </div>
+          <ul class="options" id="optionsList"></ul>
+          <div class="feedback" id="feedback"></div>
+        </div>
+        <div class="btn">
+          <button id="quizButton" onclick="startQuiz()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      const questions = [
+        {
+          question:
+            "What is the output of the following code: print(type([]) is list)?",
+          options: ["True", "False", "None", "Error"],
+          answer: 0,
+        },
+        {
+          question:
+            "Which method can be used to remove an item from a dictionary by key?",
+          options: ["delete()", "remove()", "pop()", "discard()"],
+          answer: 2,
+        },
+        {
+          question: "What does the 'self' parameter in a method refer to?",
+          options: [
+            "The class itself",
+            "The instance of the class",
+            "The parent class",
+            "A global variable",
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            "How can you merge two dictionaries in Python 3.9 and later?",
+          options: [
+            "dict1.merge(dict2)",
+            "dict1 + dict2",
+            "dict1 | dict2",
+            "dict1.update(dict2)",
+          ],
+          answer: 2,
+        },
+        {
+          question: "What will be the output of: print('Hello' * 3)?",
+          options: ["HelloHelloHello", "Hello 3", "3 Hello", "Error"],
+          answer: 0,
+        },
+        {
+          question: "What is a lambda function in Python?",
+          options: [
+            "A named function",
+            "An anonymous function",
+            "A function with no parameters",
+            "A recursive function",
+          ],
+          answer: 1,
+        },
+        {
+          question:
+            "Which of the following is used to create a generator in Python?",
+          options: ["def mygen():", "yield", "return", "next()"],
+          answer: 1,
+        },
+        {
+          question: "What is the result of 10 // 3?",
+          options: ["3.33", "3", "4", "3.0"],
+          answer: 1,
+        },
+        {
+          question:
+            "How do you specify the default value of a parameter in a function?",
+          options: [
+            "def myFunc(param = value):",
+            "def myFunc(param: value):",
+            "def myFunc(value param):",
+            "def myFunc(param): value",
+          ],
+          answer: 0,
+        },
+        {
+          question: "What does the 'with' statement do in Python?",
+          options: [
+            "Handles exceptions",
+            "Creates a new function",
+            "Manages resources",
+            "Defines a context",
+          ],
+          answer: 2,
+        },
+      ];
+    </script>
+    <script src="../../levelselect.js"></script>
+  </body>
+</html>
